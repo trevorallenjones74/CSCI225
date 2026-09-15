@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+
+<body>
+
+    <h1>Feedback Form</h1>
+    
+    <p>
+        <style>
+            video {
+                width: 500px;
+                height: 500px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <video src="img/waterfall.mp4" controls autoplay muted loop></video>
+    </p>
+
+    <form name="feedback">
+
+        <p>
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Anonymous" required>
+        </p>
+
+        <p>
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Anonymous" required>
+        </p>
+
+        <p>
+            <label for="mail">Email:</label><br>
+            <input type="email" id="mail" name="mail" placeholder="name@domain.com">
+        </p>
+
+        <p>
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+        </p>
+
+
+        <p>
+            <label for="calendar">Preferred Meeting Date:</label><br>
+            <input type="date" id="calendar" name="calendar">
+        </p>
+        
+        <p>
+            <label for="time">Preferred Meeting Time:</label><br>
+            <input type="time" id="time" name="time">
+        </p>
+
+        <p>
+            <label for="contact">Preferred Contact Method:</label><br>
+            <select id="contact" name="contact">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="text">Text</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="radio">Would you recommend this website?</label><br>
+            <input type="radio" id="radio1" name="radio" value="friend">
+            <label for="radio1">Yes</label>
+            <input type="radio" id="radio2" name="radio" value="advertisement">
+            <label for="radio2">No</label>
+        </p>
+
+        <p>
+            <label for="checkbox">What is your favorite website?</label><br>
+            <select id="checkbox" name="checkbox">
+                <option value="google">Google</option>
+                <option value="youtube">YouTube</option>
+                <option value="facebook">Facebook</option>
+                <option value="twitter">Twitter</option>
+                <option value="instagram">Instagram</option>
+                <option value="tiktok">TikTok</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="rating">How likely are you to recommend this website on a scale of 1 to 10?</label><br>
+		    <input type="number" id="rating" name="rating" min="1" max="10">
+		</p>
+
+        <p>
+            <label for="comment">Comments:</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="50" maxlength="300" placeholder="Enter your comments here..."></textarea>
+        </p>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+
+</html>
