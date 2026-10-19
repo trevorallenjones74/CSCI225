@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSCI225 Homepage of Trevor Jones</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
@@ -14,9 +15,6 @@
             <ul>
                 <li>
                     <a href="https://www.usca.edu">USCA Main Website</a>
-                </li>
-                 <li>
-                    <a href="https://www.terraria.org">Terraria website</a>
                 </li>
                 <li>
                     <a href="#introduction">Introduction</a>
@@ -37,136 +35,155 @@
     <main>
 
         <!-- Introduction -->
-        <section class="introduction" id="introduction">
+        <section class="tile introduction" id="introduction" tabindex="0">
             <h1>Introduction</h1>
 
-            <p>
-                Hello, my name is Trevor Jones, and I am a student at the
-                University of South Carolina Aiken. Some of my hobbies are the gym, snowboarding, and music.
-                 I am currently studying Software Engineering and have a strong interest in web development.
-                I hope to further my understanding of web development and be able to put it towards my career.
-            </p>
+            <div class="panel">
+                <p>
+                    Hello, my name is Trevor Jones, and I am a student at the
+                    University of South Carolina Aiken. Some of my hobbies are the gym, snowboarding, and music.
+                    I am currently studying Software Engineering and have a strong interest in web development.
+                    I hope to further my understanding of web development and be able to put it towards my career.
 
-            <img src="img/Theprofileimage.jpeg" alt="A picture of Trevor Jones" height="500" width="400">
+                    I recently completed an internship at the Savannah River Site, working with SRNS as a software engineer.
+                    I got a return offer for next summer, and I am excited to continue my work with them.
+                    This class is the most relevant to the work I did at my internship, so this is one of my favorite classes I have taken so far.
+                    Hopefully, I can take what I learn from this class and apply it to my work at SRNS next summer.
+                </p>
+
+                <img src="img/Theprofileimage.jpeg" alt="A picture of Trevor Jones" height="500" width="400">
+            </div>
         </section>
 
         <!-- Portfolio -->
-        <section class="portfolio" id="portfolio">
+        <section class="tile portfolio" id="portfolio" tabindex="0">
             <h2>Portfolio</h2>
 
-            <ul>
-                <li>
-                    <strong>Personal Web Page</strong>
-                    <p>
-                        Created a basic personal webpage using HTML5.
-                        The project involved using headings, paragraphs,
-                        hyperlinks, images, lists, and tables. Yes, I am using this webpage as my portfolio.
-                        Technical skills used: HTML5
-                    </p>
-                </li>
+            <div class="panel">
+                <ul>
+                    <li>
+                        <strong>Personal Web Page</strong>
+                        <p>
+                            Created a basic personal webpage using HTML5.
+                            The project involved using headings, paragraphs,
+                            hyperlinks, images, lists, and tables. Yes, I am using this webpage as my portfolio.
+                            Technical skills used: HTML5 andCSS
+                        </p>
+                    </li>
 
-                <li>
-                    <strong>Bus Project</strong>
-                    <p>
-                        Me and my group members designed and made a bus application.
-                        This includes the bus stations, bus routes, buses, and refuel stations.
-                        This was the primary project from my software engineering class.
-                        Technical skills used:Java and working with a team
-                    </p>
-                </li>
+                    <li>
+                        <strong>Bus Project</strong>
+                        <p>
+                            Me and my group members designed and made a bus application.
+                            This includes the bus stations, bus routes, buses, and refuel stations.
+                            This was the primary project from my software engineering class.
+                            Technical skills used:Java and working with a team
+                        </p>
+                    </li>
 
-                <li>
-                    <strong>Database Splitting</strong>
-                    <p>
-                        In this project, I learned how to split a database into multiple tables using SQL.
-                        Orignally, it was a multi tenant database, but I split it into multiple tables to make it more efficient.
-                        This was apart of my Internship at SRNS this summer.
-                        Technical skills used: SQL and C#
-                    </p>
-                </li>
-            </ul>
+                    <li>
+                        <strong>Database Splitting</strong>
+                        <p>
+                            In this project, I learned how to split a database into multiple tables using SQL.
+                            Orignally, it was a multi tenant database, but I split it into multiple tables to make it more efficient.
+                            This was apart of my Internship at SRNS this summer.
+                            Technical skills used: SQL and C#
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Schedule table thing (I made up a fake schedule)-->
-        <section class="schedule" id="schedule">
+        <!-- Schedule table (I made up a fake schedule)-->
+        <section class="tile schedule" id="schedule" tabindex="0">
             <h3>Schedule</h3>
 
-            <table border="1">
-                <caption>Current Course Schedule</caption>
+            <div class="panel">
+                <table border="1">
+                    <caption>Current Course Schedule</caption>
 
-                <thead>
-                    <tr>
-                        <th>Course</th>
-                        <th>Course Name</th>
-                        <th>Day</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Course Name</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>CSCI340</td>
-                        <td>Web Development</td>
-                        <td>Monday / Wednesday</td>
-                        <td>11:00 AM - 12:15 pM</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>CSCI340</td>
+                            <td>Web Development</td>
+                            <td>Monday / Wednesday</td>
+                            <td>11:00 AM - 12:15 PM</td>
+                        </tr>
 
-                    <tr>
-                        <td>MATH344</td>
-                        <td>Linear Alegebra</td>
-                        <td>Tuesday / Thursday</td>
-                        <td>9:00 AM - 12:15 PM</td>
-                    </tr>
+                        <tr>
+                            <td>MATH344</td>
+                            <td>Linear Algebra</td>
+                            <td>Tuesday / Thursday</td>
+                            <td>9:00 AM - 12:15 PM</td>
+                        </tr>
 
-                    <tr>
-                        <td>MATH201</td>
-                        <td>Calculus</td>
-                        <td>Monday / Wednesday</td>
-                        <td>2:00 PM - 3:15 PM</td>
-                    </tr>
+                        <tr>
+                            <td>MATH201</td>
+                            <td>Calculus</td>
+                            <td>Monday / Wednesday</td>
+                            <td>2:00 PM - 3:15 PM</td>
+                        </tr>
 
-                    <tr>
-                        <td>CSCI225</td>
-                        <td>Mobile development</td>
-                        <td>Tuesday / Thursday</td>
-                        <td>3:00 PM - 4:15 PM</td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <td>CSCI225</td>
+                            <td>Mobile development</td>
+                            <td>Tuesday / Thursday</td>
+                            <td>3:00 PM - 4:15 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Assignments -->
+        <aside class="tile assignments" id="assignment" tabindex="0">
+            <h4>Assignment</h4>
+
+            <div class="panel">
+                <ol>
+                    <li>
+                        <a href="doc/Assignment1.pdf">Assignment 1</a>
+                    </li>
+
+                    <li>
+                        <a href="ContactMe.html">Contact Me</a>
+                    </li>
+                </ol>
+            </div>
+        </aside>
+
+        <!-- Contact information -->
+        <section class="tile contact" id="contact" tabindex="0">
+            <h4>Contact Information</h4>
+
+            <div class="panel">
+                <address>
+                    <p>
+                        Email:
+                        <a href="mailto:trevoraj@usca.edu">
+                            trevoraj@usca.edu
+                        </a>
+                    </p>
+
+                    <p> Phone:
+                        <a href="tel:+18035025001"> (803) 502-5001</a>
+                    </p>
+                </address>
+            </div>
         </section>
 
     </main>
 
-    <aside id="assignment">
-        <h4>Assignment</h4>
-
-        <ol>
-            <li>
-                <a href="doc/Assignment1.pdf">Assignment 1</a>
-            </li>
-
-            <li>
-                <a href="ContactMe.html">Contact Me</a>
-            </li>
-        </ol>
-    </aside>
-
     <footer>
-
-        <address>
-            <p>Contact Information</p>
-
-            <p>
-                Email:
-                <a href="mailto:trevoraj@usca.edu">
-                    trevoraj@usca.edu
-                </a>
-            </p>
-
-            <p> Phone:
-                <a href="tel:+18035025001"> (803) 502-5001</a>
-            </p>
-        </address>
 
         <!--Copyright -->
         <p>

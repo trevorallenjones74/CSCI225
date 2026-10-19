@@ -1,0 +1,370 @@
+/* -- Base -- */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+    --orange: #ff8200;
+    --blue: #7aa7d2;
+    --ink: #222222;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #e9e9e9;
+    background-image: url("../img/Shrine.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--ink);
+}
+
+/* -- Font, color, text, paragraph -- */
+p,
+li,
+td,
+th,
+caption,
+address {
+    font-family: "Josefin Sans", Arial, sans-serif;
+}
+
+p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+li {
+    color: #1f3f66;
+    font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Josefin Sans", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Style the first letter of every paragraph */
+p::first-letter {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--orange);
+}
+
+/* -- Links -- */
+a {
+    text-decoration: none;
+    color: #b85c00;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s, letter-spacing 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: #0b3d91;
+    border-bottom-color: #0b3d91;
+    letter-spacing: 1px;
+}
+
+/* -- Header/navigation -- */
+header {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background-color: var(--orange);
+}
+
+header ul {
+    margin: 0;
+    padding: 8px 10px;
+    text-align: center;
+    list-style: none;
+}
+
+header li {
+    display: inline-block;
+    margin: 0 14px;
+    font-size: 0.8rem;
+}
+
+header a {
+    color: #ffffff;
+}
+
+header a:hover,
+header a:focus {
+    color: #1f3f66;
+    border-bottom-color: #1f3f66;
+}
+
+/* -- Layout: 3 x 3 grid of tiles -- */
+main {
+    position: fixed;
+    z-index: 30;
+    top: 90px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0 20px;
+    padding: 20px 6%;
+}
+
+.tile {
+    position: relative;
+    align-self: start;
+    animation: fadeDown 1s ease-out both;
+}
+
+.tile > :is(h1, h2, h3, h4) {
+    margin: 0;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 1.15rem;
+    border-top: 4px solid var(--blue);
+    transition: border-color 0.4s, transform 0.4s, opacity 0.3s;
+}
+
+.tile:hover > :is(h1, h2, h3, h4),
+.tile:focus-within > :is(h1, h2, h3, h4),
+.tile:target > :is(h1, h2, h3, h4) {
+    border-top-color: var(--orange);
+    transform: scale(1.06);
+}
+
+/* While one tile is open, it hides the other tiles */
+main:has(.tile:hover) .tile:not(:hover) > :is(h1, h2, h3, h4) {
+    opacity: 0;
+}
+
+.introduction { grid-column: 1; grid-row: 1; }
+.portfolio    { grid-column: 3; grid-row: 1; }
+.assignments  { grid-column: 1; grid-row: 2; align-self: end; }
+.schedule     { grid-column: 3; grid-row: 2; align-self: end; }
+.contact      { grid-column: 2; grid-row: 3; align-self: end; margin-bottom: 90px; }
+
+/* Hidden panel that opens when a tile is hovered */
+.panel {
+    position: absolute;
+    top: 100%;
+    margin-top: 6px;
+    z-index: 10;
+    width: 520px;
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 5px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+}
+
+.introduction .panel, .assignments .panel { left: 0; }
+
+.portfolio .panel, .schedule .panel { right: 0; }
+
+.schedule .panel {
+    width: 640px;
+}
+
+.schedule th, .schedule td {
+    white-space: nowrap;
+}
+
+.contact .panel {
+    left: 50%;
+    margin-left: -260px;
+}
+
+.tile:hover, .tile:focus-within, .tile:target {
+    z-index: 30;
+}
+
+.tile:hover .panel, .tile:focus-within .panel, .tile:target .panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+/* -- Images/lists -- */
+.panel img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 12px;
+}
+
+.panel ul, .panel ol {
+    padding-left: 25px;
+}
+
+.panel ul {
+    list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath d='M6 0l6 6-6 6-6-6z' fill='%23ff8200'/%3E%3C/svg%3E");
+}
+
+/* Box shadow on the first paragraph in the portfolio section */
+.portfolio li:first-child p {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.35);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* -- Table -- */
+table {
+    width: 100%;
+    border: 2px solid var(--blue);
+    border-collapse: collapse;
+    empty-cells: show;
+    font-size: 0.85rem;
+}
+
+caption {
+    padding: 6px;
+    font-weight: 600;
+}
+
+th, td {
+    padding: 8px 10px;
+    border: 1px solid var(--blue);
+    vertical-align: middle;
+    text-align: left;
+}
+
+th {
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffe6cc;
+}
+
+tbody tr {
+    transition: background-color 0.3s;
+}
+
+tbody tr:hover {
+    background-color: #cfe1f3;
+}
+
+/* -- Footer -- */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 20;
+    background-color: var(--orange);
+    color: #ffffff;
+    border-radius: 0 0 16px 16px;
+    font-size: 0.75rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer p {
+    margin: 0;
+    padding-top: 22px;
+    animation: sway 6s ease-in-out infinite alternate;
+    text-align: center;
+    line-height: 1.2;
+}
+
+footer p::first-letter {
+    font-size: inherit;
+    color: inherit;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+/* -- Animation -- */
+@keyframes sway {
+    from {
+        transform: translateX(-30vw);
+    }
+    to {
+        transform: translateX(30vw);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portfolio { animation-delay: 0.2s; }
+.assignments { animation-delay: 0.4s; }
+.schedule { animation-delay: 0.6s; }
+.contact { animation-delay: 0.8s; }
+
+@media (prefers-reduced-motion: reduce) {
+    footer p {
+        animation: none;
+    }
+}
+
+/* -- Small screens: stack everything -- */
+@media (max-width: 800px) {
+    header {
+        position: static;
+    }
+
+    main, footer {
+        position: static;
+        display: block;
+        padding: 10px 5%;
+    }
+
+    footer {
+        height: auto;
+        padding-bottom: 15px;
+    }
+
+    .contact {
+        margin-bottom: 0;
+    }
+
+    .panel, .schedule .panel, .contact .panel {
+        position: static;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
